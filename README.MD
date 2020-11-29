@@ -47,23 +47,24 @@ Install yang dibutuhkan
 
 - Install DNS pada MALANG
 
-  ```
-  apt-get update
-  apt-get install bind9
-  ```
+```
+apt-get update
+apt-get install bind9
+```
 
 - Install DHCP Server pada TUBAN
 
-  ```
-  apt-get update
-  apt-get install isc-dhcp-server
-  ```
+```
+apt-get update
+apt-get install isc-dhcp-server
+```
 
 - Install DHCP Relay pada SURABAYA
-  ```
-  apt-get update
-  apt-get install isc-dhcp-relay
-  ```
+
+```
+apt-get update
+apt-get install isc-dhcp-relay
+```
 
 ### 1. Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis.
 
@@ -73,35 +74,35 @@ Dapat dilihat pada interfaces dari tiap client di atas.
 
 Setelah menginstall DHCP Relay, maka buka file isc-dhcp-relay pada SURABAYA
 
-    ```
-    nano /etc/default/isc-dhcp-relay
-    ```
+```
+nano /etc/default/isc-dhcp-relay
+```
 
 Isi INTERFACES dengan eth1, eth2, dan eth3  
 ![isc-dhcp-relay](/img/isc-dhcp-relay.jpg)
 
 Lalu lakukan restart
 
-    ```
-    service isc-dhcp-relay restart
-    ```
+```
+service isc-dhcp-relay restart
+```
 
 ### 3. Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
 
 Setting DHCP Server pada Tuban terlebih dahulu
 
-    ```
-    nano /etc/default/isc-dhcp-server
-    ```
+```
+nano /etc/default/isc-dhcp-server
+```
 
 Isi INTERFACES dengan eth0  
 ![isc-dhcp-server](/img/isc-dhcp-server.jpg)
 
 Buka DHCP config
 
-    ```
-    nano /etc/dhcp/dhcpd.conf
-    ```
+```
+nano /etc/dhcp/dhcpd.conf
+```
 
 Lalu tambahkan Konfigurasi seperti pada gambar  
 ![dhcpd.conf](/img/dhcpd.conf.jpg)
