@@ -8,7 +8,7 @@
 
 ## Persiapan
 
-Membuat topologi.sh berdasarkan soal
+Membuat topologi.sh berdasarkan soal  
 ![topologi.sh](/img/topologi.jpg)
 
 Mengedit interfaces
@@ -17,30 +17,30 @@ Mengedit interfaces
 nano /etc/network/interfaces
 ```
 
-- SURABAYA
+- SURABAYA  
   ![SURABAYA](/img/interfaces_SURABAYA.jpg)
 
-- MALANG
+- MALANG  
   ![MALANG](/img/interfaces_MALANG.jpg)
 
-- TUBAN
+- TUBAN  
   ![TUBAN](/img/interfaces_TUBAN.jpg)
 
-- MOJOKERTO
+- MOJOKERTO  
   ![MOJOKERTO](/img/interfaces_MOJOKERTO.jpg)
 
 Pada soal 1, seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis.
 
-- MADIUN
+- MADIUN  
   ![MADIUN](/img/interfaces_MADIUN.jpg)
 
-- GRESIK
+- GRESIK  
   ![GRESIK](/img/interfaces_GRESIK.jpg)
 
-- SIDOARJO
+- SIDOARJO  
   ![SIDOARJO](/img/interfaces_SIDOARJO.jpg)
 
-- BANYUWANGI
+- BANYUWANGI  
   ![BANYUWANGI](/img/interfaces_BANYUWANGI.jpg)
 
 Install yang dibutuhkan
@@ -77,7 +77,7 @@ Setelah menginstall DHCP Relay, maka buka file isc-dhcp-relay pada SURABAYA
     nano /etc/default/isc-dhcp-relay
     ```
 
-Isi INTERFACES dengan eth1, eth2, dan eth3
+Isi INTERFACES dengan eth1, eth2, dan eth3  
 ![isc-dhcp-relay](/img/isc-dhcp-relay.jpg)
 
 Lalu lakukan restart
@@ -94,7 +94,7 @@ Setting DHCP Server pada Tuban terlebih dahulu
     nano /etc/default/isc-dhcp-server
     ```
 
-Isi INTERFACES dengan eth0
+Isi INTERFACES dengan eth0  
 ![isc-dhcp-server](/img/isc-dhcp-server.jpg)
 
 Buka DHCP config
@@ -103,7 +103,7 @@ Buka DHCP config
     nano /etc/dhcp/dhcpd.conf
     ```
 
-Lalu tambahkan Konfigurasi seperti pada gambar
+Lalu tambahkan Konfigurasi seperti pada gambar  
 ![dhcpd.conf](/img/dhcpd.conf.jpg)
 
 Soal no 3 diselesaikan dengan membuat range pada subnet 1
