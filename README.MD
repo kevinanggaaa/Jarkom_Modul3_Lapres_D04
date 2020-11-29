@@ -148,34 +148,44 @@ Lalu backup file squid.conf :
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 ```
 
-Buka squid.conf yang baru:
+Lalu buat file squid.conf yang baru dengan perintah:
 
 ```bash
 nano /etc/squid/squid.conf
 ```
 
-Lalu buat konfigurasi menjadi sebagai berikut
+Lalu buat konfigurasi file menjadi sebagai berikut
+
 ![no-7](/img/no-7.png)
 
-Lalu restart dengan
+Setelah itu, restart dengan perintah
 
 ```
 service squid restart
 ```
 
-Masukkan proxy seperti gambar berikut.
+Masukkan proxy seperti gambar berikut dimana Address adalah IP Mojokerto.
+
 ![no-7.1](/img/no-7.1.png)
 
-Lalu buka salah satu website, sehingga akan menampilkan sebagai berikut.
+Lalu buka salah satu website, sehingga akan menampilkan sebagai berikut dan isi username dengan `userta_d04` dan password `inipassw0rdta_d04`.
+
 ![no-7.2](/img/no-7.2.jpg)
 
-### 8 setiap hari Selasa-Rabu pukul 13.00-18.00. Bu Meguri membatasi penggunaan internet Anri hanya pada jadwal yang telah ditentukan itu saja. Maka diluar jam tersebut, Anri tidak dapat mengakses jaringan internet dengan proxy tersebut.
+Sehingga akan menampilkan website dibawah ini.
 
-Buat file dengan command `nano /etc/squid/acl.conf` menjadi berikut ini.
+![no-7.3](/img/no-7.3.jpg)
+
+### 8. setiap hari Selasa-Rabu pukul 13.00-18.00. Bu Meguri membatasi penggunaan internet Anri hanya pada jadwal yang telah ditentukan itu saja. Maka diluar jam tersebut, Anri tidak dapat mengakses jaringan internet dengan proxy tersebut.
+
+Buat file dengan command `nano /etc/squid/acl.conf` dan atur konfigurasi file menjadi seperti berikut ini.
+
 ![no-8](/img/no-8.jpg)
 
-Dan tambahkan beberapa kode pada file squid.conf
+Dan tambahkan beberapa kode pada file squid.conf seperti gambar dibawah ini.
+
 ![no-8.1](/img/no-8.1.png)
+
 Lalu restart dengan
 
 ```
@@ -183,14 +193,17 @@ service squid restart
 ```
 
 Ini adalah tampilan ketika website tidak bisa dibuka.
+
 ![no-8.2](/img/no-8.2.jpg)
 
 ### 9. Jadwal bimbingan dengan Bu Meguri adalah (9) setiap hari Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai Jumat jam 09.00).
 
-Buka file dengan command `nano /etc/squid/acl.conf` dan edit menjadi berikut ini.
+Buka file dengan command `nano /etc/squid/acl.conf` dan edit isi file tersebut menjadi berikut ini.
+
 ![no-9](/img/no-9.png)
 
 Lalu edit konfigurasi pada file `/etc/squid/squid.conf` menjadi berikut ini.
+
 ![no-9.1](/img/no-9.1.png)
 
 Lalu restart dengan perintah `service squid restart`
@@ -209,14 +222,13 @@ Jalankan perintah `cd /usr/share/squid/errors/English`. dan lakukan `wget 10.151
 Lalu restart dengan perintah `service squid restart`.
 
 Ketika membuka website pada jam yang tidak diperbolehkan, maka halaman website error akan menampilkan:
+
 ![no-11](/img/no-11.jpg)
 
-### 12. Karena Bu Meguri dan Anri adalah tipe orang pelupa, maka untuk memudahkan mereka, Anri
-
-memiliki ide ketika menggunakan proxy cukup dengan mengetikkan domain
-`janganlupa-ta.yyy.pw` dan memasukkan port `8080`.
+### 12. Karena Bu Meguri dan Anri adalah tipe orang pelupa, maka untuk memudahkan mereka, Anri memiliki ide ketika menggunakan proxy cukup dengan mengetikkan domain `janganlupa-ta.yyy.pw` dan memasukkan port `8080`.
 
 Buka UML Malang dan jalankan perintah `apt-get install bind9 -y`. Lalu jalankan perintah `nano /etc/bind/named.conf.local` dan ubah konfigurasi menjadi seperti berikut.
+
 ![no-12](/img/no-12.jpg)
 
 Lalu jalankan
@@ -227,10 +239,13 @@ nano /etc/bind/jarkom/janganlupa-ta.d04.pw
 ```
 
 dan atur konfigurasi filenya menjadi berikut.
+
 ![no-12.1](/img/no-12.1.jpg)
 
 Lalu jalankan perintah `service bind9 restart` dan atur proxy menjadi seperti berikut ini
+
 ![no-12.2](/img/no-12.2.png)
 
 Sehingga ketika membuka suatu website akan menjadi seperti berikut ini.
+
 ![no-12.3](/img/no-12.3.png)
